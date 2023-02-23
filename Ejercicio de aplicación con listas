@@ -1,0 +1,42 @@
+// Ejercicio de aplicación usando las listas y sus métodos
+let listaCompras = ["pan", "leche", "verduras", "frutas", "cafe"];
+console.log(listaCompras);
+
+// Modicando la lista - Se agrega "Aceite de Girasol"
+listaCompras.push("Aceite de Girasol");
+console.log(listaCompras);
+
+// Eliminar "Aceite de Girasol" de la lista
+listaCompras.pop(listaCompras.length);
+console.log(listaCompras);
+
+// Lista de mis peliculas favoritas usando objetos (objetos con propiedades: titulo, director, fecha)
+let listaPelis = [
+    { titulo: "Volver al Futuro", director: "Robert Zemeckiz", dia: 26, mes: 12, year: 1985},
+    { titulo: "Harry Potter Y El Caliz de Fuego", director: "Mike Newell", dia: 24, mes: 11, year: 2005},
+    { titulo: "Busqueda Implacable 2", director: "Oliver Megaton", dia: 04, mes: 10, year: 2012},
+    { titulo: "Coco", director: "Adrian Molina, Lee Unkrich", dia: 22, mes: 11, year: 2017}
+]
+console.log(listaPelis);
+
+// Nueva lista con las peliculas posteriores al 1 de enero del 2010
+let nuevaLista = listaPelis.filter(dia => dia.dia > 01);
+let nuevaLista2 = nuevaLista.filter(mes => mes.mes > 01);
+let nuevaLista3 = nuevaLista2.filter(year => year.year > 2010);
+console.log(nuevaLista3);
+
+// Lista con los nombres de los directores de la lista original
+let listaDirectores = listaPelis.map(nombre => nombre.director);
+console.log(listaDirectores);
+
+// Lista con los nombres de las peliculas de la lista original
+let listaTitulos = listaPelis.map(nomPeli => nomPeli.titulo);
+console.log(listaTitulos);
+
+// Lista que concatena los nombres de directores y los título de las peliculas - usando el método ".conact()"
+let listaConcat = listaDirectores.concat(listaTitulos);
+console.log(listaConcat);
+
+// Lista que concatena los nombres de directores y los título de las peliculas - usando el factor de propracion
+let listaFactPropag = [...listaDirectores,... listaTitulos];
+console.log(listaFactPropag);
